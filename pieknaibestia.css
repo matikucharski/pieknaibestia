@@ -1,0 +1,103 @@
+/* Copyright by Mateusz Kucharski */
+html {
+  	background: url(2.jpg) no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	background: none;
+	/*padding-top: 40px;*/
+}
+header img{
+	height: 40px;
+
+}
+header .navbar-inner{
+	padding: 5px 0;
+	border: none;
+}
+header ul>li{
+	font-size: 16px;
+}
+/* to hide text while googleFonts loading
+*  http://help.typekit.com/customer/portal/articles/6852
+*  https://github.com/typekit/webfontloader
+*/
+h1 {
+	visibility: hidden;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+	letter-spacing: normal;
+	font-size: 6.4em;
+	z-index:-1;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+}
+.wf-loading h1 {
+    visibility: hidden;
+    color: transparent;
+    text-shadow: 0 0 50px white;
+  }
+.wf-active h1 {
+	font-family: 'Lobster Two', 'Helvetica Neue', Helvetica, sans-serif;
+	font-style: italic;
+	/*line-height: 400px;*/
+	visibility: visible;
+	text-shadow: 1px 1px 4px white;
+	-o-transition: text-shadow 1s, color 1s;
+	-webkit-transition: text-shadow 1s, color 1s;
+	transition: text-shadow 1s, color 1s;
+}
+h1:hover {
+	color: #222;
+	text-shadow: 1px 1px 20px #ccc;
+}
+.info {
+	font-family: 'EB Garamond', serif;
+	position: absolute;
+	bottom: 10%;
+	margin-left:60%;
+	font-size: 2em;
+	color: white;
+	text-shadow: 1px 1px 7px black;
+}
+header#top-menu{
+	border: none;
+	opacity:0.70;
+	font-family: 'EB Garamond', Garamond, serif;
+	-webkit-transition: 350ms ease-out;
+	transition: 350ms ease-out;
+}
+/*header#top-menu:hover{
+	opacity: 0.95;
+}*/
+/*#top-menu .navbar-inner {
+	background: #111;
+}*/
+
+@media (max-width: 920px) {
+	.wf-active h1 {
+		font-size: 3.7em;
+	}
+	
+	.info {
+		font-size:1.7em;
+	}
+}
+
+@media (max-width: 500px) {
+	.wf-active h1 {
+		font-size: 2.6em;
+		left:15%;
+	}
+	.info {
+		font-size:1.2em;
+	}
+	#top-menu .brand{
+		font-size: 16px;
+	}
+}
