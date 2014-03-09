@@ -67,7 +67,7 @@ h1:hover {
 }
 header#top-menu{
 	border: none;
-	opacity:0.70;
+	opacity:0.90;
 	font-family: 'EB Garamond', Garamond, serif;
 	-webkit-transition: 350ms ease-out;
 	transition: 350ms ease-out;
