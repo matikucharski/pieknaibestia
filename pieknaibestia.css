@@ -16,6 +16,16 @@ header img{
 	height: 40px;
 
 }
+.window {
+	background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 7px black inset;
+    margin: 0 10%;
+    opacity: 0.9;
+    padding: 10px;
+    position: relative;
+    top: 70px;
+}
 header .navbar-inner{
 	padding: 5px 0;
 	border: none;
