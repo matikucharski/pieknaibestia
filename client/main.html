@@ -15,11 +15,11 @@
   })(); </script>
   <title>Ślub Basi i Mateusza Ku.</title>
 </head>
-
 <body>
     {{> topMenu}}
     {{> message}}
-    <!-- {{> onas}} -->
     <!-- rendered by router -->
+    {{#isolate}}
     {{renderPage}}
+    {{/isolate}}
 </body>
