@@ -1,6 +1,33 @@
 <template name="prezenty">
 	<div class="window" id="prezenty">
-	<h2>Prezenty</h2>
-	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+		<h2>Prezenty</h2>
+		<div id="gift-list">
+			{{> giftList}}
+		</div>
+	</div>
+</template>
+
+<template name="giftList">
+		{{#each gifts}}
+		
+			{{> giftItem}}
+		
+		{{/each}}
+</template>
+
+<template name="giftItem">
+	<div id="{{alias}}" class="gift-description {{#if reserved}}reserved{{/if}}">
+		<h3><a href="http://{{url}}" target="_blank">{{name}}</a></h3>
+		<a href="http://{{url}}" target="_blank">
+			<img alt="{{alias}}Img" src="{{image}}" class="pull-left"/>
+		</a>
+		<p id="{{alias}}-description">
+			{{description}}
+		</p>
+		{{#if reserved}}
+		<button><span class="icon-remove"></span>Zaklepane!</button>
+		{{else}}
+		<input type="button" value="Zarezerwuj" class="clean-gray" onclick="alert('This 15-20 minute piece was composed by George Gershwin.')">
+		{{/if}}
 	</div>
 </template>
