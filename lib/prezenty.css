@@ -3,8 +3,12 @@
 }
 
 .gift-description img{
-	/*float:left;*/
 	-webkit-transition: -webkit-filter 1s;
+}
+.gift-description p {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
 }
 .gift-description.reserved img {
 	-webkit-filter: grayscale(100%);
@@ -23,6 +27,7 @@
 
 .gift-description{
 	box-shadow: inset 1px 1px 6px -2px black;
+	border-radius: 3px;
 }
 
 .gift-description img{
