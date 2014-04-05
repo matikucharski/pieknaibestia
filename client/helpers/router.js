@@ -19,5 +19,6 @@ Meteor.Router.add({
 	'/prezenty' : {
 		to:'prezenty',
 		and: function(){Session.set('activeMenu', 'prezenty');}
-	}
+	},
+	'*' : '404'
 });

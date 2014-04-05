@@ -1,6 +1,10 @@
 <template name="prezenty">
 	<div class="window" id="prezenty">
 		<h2>Prezenty</h2>
+		{{#if loaded}}
+			<p>Zamiast zwyczajowych bukietów kwiatów będziemy wdzięczni za butelkę dobrego wina :)</p>
+			<p>Poniżej zaś znajduje się lista proponowanych przez nas - dla nas prezentów. Jeśli ktoś decyduje się na zakupienie jednego z poniższych, prosimy o rychłe zarezerwowanie coby inni goście po próżnicy dubli nie nabywali. Dziękujemy!</p>
+		{{/if}}
 		<div id="gift-list">
 			{{> giftList}}
 		</div>
@@ -8,6 +12,9 @@
 </template>
 
 <template name="giftList">
+		{{#if loading}}
+			<div class="loading">Ładowanie listy prezentów <span class="rotate">&lowast;</span></div>
+		{{/if}}
 		{{#each gifts}}
 		
 			{{> giftItem}}
@@ -17,7 +24,7 @@
 
 <template name="giftItem">
 	<div id="{{alias}}" class="gift-description {{#if reserved}}reserved{{/if}}">
-		<h3><a href="http://{{url}}" target="_blank">{{name}}</a></h3>
+		<h3 class="cl-effect-1"><a href="http://{{url}}" target="_blank">{{name}}</a></h3>
 		<a href="http://{{url}}" target="_blank">
 			<img alt="{{alias}}Img" src="{{image}}" class="pull-left"/>
 		</a>
@@ -25,9 +32,9 @@
 			{{description}}
 		</p>
 		{{#if reserved}}
-		<button><span class="icon-remove"></span>Zaklepane!</button>
+		<button class="purelycss_elegance_button_reserve color_silver"><span class="icon-remove"></span>Zaklepane</button>
 		{{else}}
-		<input type="button" value="Zarezerwuj" class="clean-gray" onclick="alert('This 15-20 minute piece was composed by George Gershwin.')">
+		<input type="button" value="Zarezerwuj!" class="purelycss_elegance_button color_green hover_olive">
 		{{/if}}
 	</div>
 </template>

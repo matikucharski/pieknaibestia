@@ -5,7 +5,7 @@ html {
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-
+  	-webkit-text-stroke: 0.3px;
 	-webkit-font-smoothing: antialiased;
 }
 body {
@@ -17,15 +17,34 @@ header img{
 	height: 40px;
 
 }
+h1, h2, h3{
+	font-weight: 600;
+}
 .window {
 	background-color: rgba(255, 255, 255, 0.9);
     border-radius: 7px 7px 7px 7px;
+    -moz-box-shadow: 0 0 7px black inset;
+    -webkit-box-shadow: 0 0 7px black inset;
     box-shadow: 0 0 7px black inset;
     margin: 10% 10%;
     margin-bottom: 0;
     padding: 15px;
     position: relative;
     /*top: 40%;*/
+}
+/*ewentualny efekt pojawiania sie*/
+.wf-loading .window {
+	opacity: 0;
+	-moz-box-shadow: 0 0 50px white;
+	-webkit-box-shadow: 0 0 50px white;
+	box-shadow: 0 0 50px white;
+}
+.wf-active .window {
+	opacity: 1;
+	-moz-transition: -moz-box-shadow 1s, opacity 1s;
+	-o-transition: box-shadow 1s, opacity 1s;
+	-webkit-transition: -webkit-box-shadow 1s, opacity 1s;
+	transition: box-shadow 1s, opacity 1s;
 }
 header .navbar-inner{
 	padding: 5px 0;
@@ -78,17 +97,45 @@ h1:hover {
 }
 header#top-menu{
 	border: none;
-	opacity:0.90;
+	opacity:0.95;
 	font-family: 'EB Garamond', Garamond, serif;
 	-webkit-transition: 350ms ease-out;
 	transition: 350ms ease-out;
 }
-/*header#top-menu:hover{
-	opacity: 0.95;
-}*/
-/*#top-menu .navbar-inner {
-	background: #111;
-}*/
+
+div.window#wesele > p:first-letter,
+div.window#slub > p:first-letter,
+div.window#onas > p:first-letter {
+	text-transform: capitalize;
+	font-size: 2.2em;
+	font-family: 'EB Garamond', Garamond, serif;
+}
+div.window#slub > p > span.dataIMiejsce{
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	font-size: 160%;
+	margin: 10px 0;
+}
+img.strzalka {
+	/*width: 30%;*/
+	height: auto;
+	position: relative;
+	top:15px;
+}
+.mapa iframe{
+	width: 100%;
+	opacity: 0.8;
+}
+footer{
+	text-align: center;
+	color: #222;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+}
 
 @media (max-width: 920px) {
 	.wf-active h1 {
